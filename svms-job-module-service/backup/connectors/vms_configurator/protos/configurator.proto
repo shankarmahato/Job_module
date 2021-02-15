@@ -1,0 +1,26 @@
+syntax = "proto3";
+package Configurator;
+
+message ProgramInfoRequest {
+    string program_id = 1;
+}
+
+message ProgramInfoResponse {
+    string id = 1;
+    string name = 2;
+    string client_id = 3;
+    string msp_id = 4;
+    string vendor_ids = 5;
+    string start_date = 6;
+    string end_date = 7;
+    bool is_enabled = 8;
+    string config = 9;
+    bool version = 10;
+    string created_on = 11;
+    string modified_on = 12;
+}
+
+
+service Program {
+    rpc getProgramInfo(ProgramInfoRequest) returns (ProgramInfoResponse) {}
+}

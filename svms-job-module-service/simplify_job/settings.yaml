@@ -1,0 +1,153 @@
+default:
+  DEBUG: false
+  ALLOWED_HOSTS:
+    - "*"
+  SECRET_KEY: 'xp$@i8bx9e(i+4mlpql%drich43)k8i_&-tvz8)_4tnyppolc('
+  LANGUAGE_CODE: 'en-us'
+  TIME_ZONE: 'UTC'
+  USE_I18N: true
+  USE_L10N: true
+  USE_TZ: true
+  GOOGLE_MAP_API_KEY: 'get_a_key'
+  STATIC_URL: '/static/'
+  AUTH_TOKEN_ENDPOINT: "http://dev-awsnlb.simplifyvms.com:8004/authenticate"
+  AUTH_TOKEN_USERNAME: "simplifyvms.superadmin@simplifyvms.info"
+  AUTH_TOKEN_PASSWORD: "Simplify@123"
+  NOTIFICATION_API: 'http://dev-awsnlb.simplifyvms.com:8001/api/notification/email'
+  PROFILE_BASE_URL: 'http://dev-awsnlb.simplifyvms.com:8004/profile-manager'
+  CONFIGURATOR_BASE_URL: 'http://dev-awsnlb.simplifyvms.com:8003/configurator'
+  APPROVAL_WORKFLOW: 'http://dev-awsnlb.simplifyvms.com:8001/api/approval/submit'
+  APPROVAL_LIST: 'http://dev-awsnlb.simplifyvms.com:8005'
+  DATABASES:
+    default:
+      ENGINE: 'django.db.backends.mysql'
+      CONN_MAX_AGE: 0
+      OPTIONS:
+        host: "127.0.0.1"
+        port: 3306
+        user: "root"
+        password: "root@123"
+        db: "svms_job1"
+        charset: 'utf8mb4'
+        init_command: "SET sql_mode='STRICT_TRANS_TABLES'"
+  LOGGING:
+    HANDLERS_CONSOLE_LEVEL: DEBUG
+    LOGGERS_DEFAULT_LEVEL:  DEBUG
+  LOGGING_HANDLER: 'console'
+  CONNECTIVITY: 2
+  RESPONSE_TIMEOUT: 10
+  REDIS_JOB_KEY: 'svms:job-manager:program:{program_id}:job:{job_uid}'
+  REDIS_OTHER_SERVICES:
+    USERS_KEY: 'svms:configurator:program:{}:member:{}'
+    WORK_LOCATION_KEY: 'svms:configurator:program:{}:work-location:{}'
+    HIERARCHY_KEY: 'svms:configurator:program:{}:hierarchy:{}' 
+    QUALIFICATION_KEY: 'svms:configurator:program:{}:qualification-type:{}:qualification:{}'
+    FOUNDATIONAL_KEY: 'svms:configurator:program:{}:foundational-data-type:{}:foundational-data:{}'
+    PROGRAM_KEY: "svms:configurator:program:{}"
+    TOKEN_KEY: "svms:configurator:authorization:token:{}"
+  
+  URLS:
+    WORK_LOCATION: '{configurator_base_url}/programs/{program_id}/work-locations/{location_id}'
+    HIERARCHY: '{configurator_base_url}/programs/{program_id}/hierarchy/{hierarchy_id}'
+    APPROVAL: '{approval_base_url}/approval/status/entity/job/{job_id}?get_obj=False'
+    QUALIFICATION: '{configurator_base_url}/programs/{program_id}/qualification-types/{qualification_type_id}/qualifications/{qualification_id}'
+    CHECKLIST: '{configurator_base_url}/programs/{program_id}/onboarding/checklists/{checklist_id}'
+    VALIDATE_CHECKLIST: '{configurator_base_url}/programs/{program_id}/onboarding/checklists/{checklist_id}/attach/job_templates/{job_id}'
+    GET_JOB_CANDIDATES: '{configurator_base_url}/programs/{program_id}/jobs/{job_id}/candidates'
+    GET_VENDOR_SUBMITTED_CANDIDATES: '{configurator_base_url}/programs/{program_id}/jobs/{job_id}/candidates?vendor_id={vendor_id}'
+    FOUNDATION_DATA: '{configurator_base_url}/programs/{program_id}/foundational-data-types/{foundation_type_id}/foundational-data/{foundation_id}'
+    GET_ROLE: '{configurator_base_url}/programs/{program_id}/roles/{role_id}'
+    GET_CANDIDATES: '{configurator_base_url}/candidates/{candidate_id}'
+    POST_CANDIDATES: '{configurator_base_url}/candidates'
+    SUBMIT_CANDIDATES:  '{configurator_base_url}/programs/{program_id}/jobs/{job_id}/candidates/submit'
+    GET_PROGRAM: '{configurator_base_url}/programs/{program_id}'
+    GET_USER: '{configurator_base_url}/programs/{program_id}/members/{member_id}'
+    GET_PROGRAM_NAME: '{configurator_base_url}/programs/{program_id}'
+    AUTH_VALIDATE: '{profile_base_url}/authentication/validate'
+    CREATE_USER: '{profile_base_url}/users'
+    UPDATE_USER: '{profile_base_url}/organizations/{org_id}/members/{user_id}'
+    TERM_OF_SERVICE: "https://www.google.com/policies/terms/"
+    VMS_JOB_MODULE: '/vms-job-module/'
+    VMS_JOB_MODULE_PING: '/vms-job-module/ping/'
+    VMS_JOB_MODULE_JOBS: '/vms-job-module/jobs/'
+    GET_VENDORS_BASED_ON_GROUP_ID: "{configurator_base_url}/programs/{program_id}/vendor-groups/{group_id}"
+    GET_VENDOR_DETAIL: "{configurator_base_url}/organizations/{vendor_id}"
+    GET_VENDORS: "{configurator_base_url}/programs/{program_id}/vendors"
+    
+  VMS_DASHBOARD: 'https://dev-jobboard.simplifyapis.com/api/post-jobdata'
+  REDIS:
+    host: "localhost"
+    port: 6379
+
+  XRAY:
+    AUTO_INSTRUMENT: True
+    AWS_XRAY_CONTEXT_MISSING: 'LOG_ERROR'
+    AWS_XRAY_DAEMON_ADDRESS: '10.10.1.122:2000'
+    AWS_XRAY_TRACING_NAME: 'simplify_job'
+    PLUGINS:
+      PLUGIN1: 'EC2Plugin'
+      PLUGIN2: 'ECSPlugin'
+      PLUGIN3: 'ElasticBeanstalkPlugin'
+    SAMPLING: False
+    AWS_XRAY_SDK_ENABLED: True
+
+local:
+  DEBUG: true
+
+dev:
+  DEBUG: true
+  STATIC_URL: '/static/'
+  AWS:
+    AWS_REGION: us-east-1
+    AWS_SECRET_NAME: "dev/job"
+  APPROVAL_LIST: 'http://dev-awsnlb.simplifyvms.com:8005'
+  NOTIFICATION_API: 'http://dev-awsnlb.simplifyvms.com:8001/api/notification/email'
+  PROFILE_BASE_URL: 'http://dev-awsnlb.simplifyvms.com:8004/profile-manager'
+  CONFIGURATOR_BASE_URL: 'http://dev-awsnlb.simplifyvms.com:8003/configurator'
+  APPROVAL_WORKFLOW: 'http://dev-awsnlb.simplifyvms.com:8001/api/approval/submit'
+
+
+qa:
+  DEBUG: true
+  STATIC_URL: '/static/'
+  AWS:
+    AWS_REGION: us-east-1
+    AWS_SECRET_NAME: "qa/job"
+  AUTH_TOKEN_ENDPOINT: "http://qa-awsnlb.simplifysandbox.net:8004/authenticate"
+  AUTH_TOKEN_USERNAME: "simplifyvms.superadmin@simplifyvms.info"
+  AUTH_TOKEN_PASSWORD: "demo@1234"
+  NOTIFICATION_API: 'http://qa-awsnlb.simplifysandbox.net:8001/api/notification/email'
+  CONFIGURATOR_BASE_URL: 'http://qa-awsnlb.simplifysandbox.net:8003/configurator'
+  PROFILE_BASE_URL: 'http://qa-awsnlb.simplifysandbox.net:8004/profile-manager'
+  APPROVAL_WORKFLOW: 'http://qa-awsnlb.simplifysandbox.net:8001/api/approval/submit'
+  APPROVAL_LIST: 'http://qa-awsnlb.simplifysandbox.net:8005'
+
+uat:
+  DEBUG: true
+  STATIC_URL: '/static/'
+  AUTH_TOKEN_ENDPOINT: "http://uat-wipro-nlb.simplifysandbox.net:8004/authenticate"
+  AUTH_TOKEN_USERNAME: "simplifyvms.superadmin@simplifyvms.info"
+  AUTH_TOKEN_PASSWORD: "Simplify@123"
+  NOTIFICATION_API: 'http://uat-wipro-nlb.simplifysandbox.net:8001/api/notification/email'
+  CONFIGURATOR_BASE_URL: 'http://uat-wipro-nlb.simplifysandbox.net:8003/configurator'
+  PROFILE_BASE_URL: 'http://uat-wipro-nlb.simplifysandbox.net:8004/profile-manager'
+  APPROVAL_WORKFLOW: 'http://uat-wipro-nlb.simplifysandbox.net:8001/api/approval/submit'
+  APPROVAL_LIST: 'http://uat-wipro-nlb.simplifysandbox.net:8005'
+  TENANT_URL: 'http://uat-wipro-nlb.simplifysandbox.net'
+  XRAY:
+    AUTO_INSTRUMENT: True
+    AWS_XRAY_CONTEXT_MISSING: 'LOG_ERROR'
+    AWS_XRAY_DAEMON_ADDRESS: 'ap-south-1.xray.simplifysandbox.net:2000'
+    AWS_XRAY_TRACING_NAME: 'simplify_job'
+    PLUGINS:
+      PLUGIN1: 'EC2Plugin'
+      PLUGIN2: 'ECSPlugin'
+      PLUGIN3: 'ElasticBeanstalkPlugin'
+    SAMPLING: False
+    AWS_XRAY_SDK_ENABLED: True
+
+
+prod:
+  LOGGING:
+    HANDLERS_CONSOLE_LEVEL: INFO
+    LOGGERS_DEFAULT_LEVEL:  INFO

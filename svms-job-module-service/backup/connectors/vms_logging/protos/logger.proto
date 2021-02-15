@@ -1,0 +1,22 @@
+syntax = "proto3";
+package Logger;
+
+message AuditLogRequest {
+    string program = 1;
+    string user = 2;
+    string source = 3;
+    string ip = 4;
+    string user_agent = 5;
+    string action = 6;
+    string record_type = 7;
+    string record_ref = 8;
+    string meta_data = 9;
+    sint64 created_on = 10;
+}
+message AuditLogResponse {
+    string id = 1;
+}
+
+service Logger {
+    rpc saveAuditLog(AuditLogRequest) returns (AuditLogResponse) {}
+}

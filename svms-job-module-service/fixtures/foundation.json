@@ -1,0 +1,1 @@
+[{"model": "job.foundationdata", "pk": 1, "fields": {"program_id": "new_config", "cost_center": "1", "company_code": "11001", "gl_code": "110001", "source_code": "20001", "market_region": "300001", "work_location": "noida", "status": true, "created_on": "2020-10-19T09:21:20.834Z", "modified_on": "2020-10-19T09:21:20.835Z", "created_by": "admin", "modified_by": "admin"}}]

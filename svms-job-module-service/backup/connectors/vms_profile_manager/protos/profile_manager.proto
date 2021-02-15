@@ -1,0 +1,111 @@
+syntax = "proto3";
+package ProfileManager;
+
+message AuthRequest {
+    string email = 1;
+    string password = 2;
+    string ua = 3;
+    string ip = 4;
+}
+message AuthResponse {
+    string token = 1;
+    string user_id = 2;
+}
+
+message TokenRequest {
+    string token = 1;
+    string ua = 2;
+}
+
+message UserInfoRequest {
+    string user_id = 1;
+}
+
+message UserInfoAddress {
+    string label = 1;
+    string street_1 = 2;
+    string street_2 = 3;
+    string country = 4;
+    string state = 5;
+    string city = 6;
+    string zipcode = 7;
+}
+
+message UserInfoPhoneNumber {
+    string label = 1;
+    string isd_code = 2;
+    string number = 3;
+}
+
+message UserInfoEmailAddress {
+    string label = 1;
+    string email = 2;
+    bool verified = 3;
+    bool primary = 4;
+}
+
+message UserInfoSocialProfile {
+    string label = 1;
+    string url = 2;
+}
+
+message UserInfoEduQualification {
+    string label = 1;
+    string url = 2;
+}
+
+message UserInfoPublication {
+    string label = 1;
+    string publisher = 2;
+    string published_on = 3;
+    string url = 4;
+    string description = 5;
+}
+
+message UserCreateRequest  {
+    string email = 1;
+    string password = 2;
+    string name_prefix = 3;
+    string first_name = 4;
+    string middle_name = 5;
+    string last_name = 6;
+    string name_suffix = 7;
+    repeated UserInfoAddress addresses = 8;
+    repeated UserInfoPhoneNumber contact_numbers = 9;
+    repeated UserInfoEmailAddress email_addresses = 10;
+    repeated UserInfoSocialProfile social_profiles = 11;
+    repeated UserInfoEduQualification educational_qualifications = 12;
+    repeated UserInfoPublication publications = 13;
+    bool is_enabled = 14;
+    bool is_activated = 15;
+}
+
+message UserInfoResponse {
+    string id = 1;
+    string email = 2;
+    string name_prefix = 3;
+    string first_name = 4;
+    string middle_name = 5;
+    string last_name = 6;
+    string name_suffix = 7;
+    repeated UserInfoAddress addresses = 8;
+    repeated UserInfoPhoneNumber contact_numbers = 9;
+    repeated UserInfoEmailAddress email_addresses = 10;
+    repeated UserInfoSocialProfile social_profiles = 11;
+    repeated UserInfoEduQualification educational_qualifications = 12;
+    repeated UserInfoPublication publications = 13;
+    bool is_enabled = 14;
+    bool is_activated = 15;
+    string created_on = 16;
+    string modified_on = 17;
+}
+
+service Profile {
+    rpc getUserInfo(UserInfoRequest) returns (UserInfoResponse) {}
+    rpc createUser(UserCreateRequest) returns (UserInfoResponse) {}
+}
+
+service Authentication {
+    rpc authenticate(AuthRequest) returns (AuthResponse) {}
+    rpc validateToken(TokenRequest) returns (UserInfoResponse) {}
+}

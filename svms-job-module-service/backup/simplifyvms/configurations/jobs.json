@@ -1,0 +1,178 @@
+{
+    "code": "jobs",
+    "display_name": {
+        "singular": "Job",
+        "plural": "Jobs"
+    },
+    "group": "Order Management",
+    "version": 1,
+    "enabled": true,
+    "description": "Jobs module configurations",
+    "config": {
+        "views": {
+            "LIST": [{
+                "name": "Default List",
+                "columns": [
+                    {
+                        "ref_slug": "job_title"
+                    },
+                    {
+                        "ref_slug": "job_level"
+                    },
+                    {
+                        "ref_slug": "location"
+                    },
+                    {
+                        "ref_slug": "bill_rate"
+                    },
+                    {
+                        "ref_slug": "created_by"
+                    },
+                    {
+                        "ref_slug": "created_on"
+                    }
+                ]
+            }]
+        },
+        "field_groups": [
+            {
+                "label": "Job Info and Rates",
+                "slug": "job_info_and_rates",
+                "fields": [
+                    {
+                        "source": "SYSTEM",
+                        "label": "Job Title",
+                        "slug": "job_title",
+                        "type": "TEXT",
+                        "required": true
+                    },
+                    {
+                        "source": "SYSTEM",
+                        "label": "Job Level",
+                        "slug": "job_level",
+                        "type": "TEXT",
+                        "required": true
+                    },
+                    {
+                        "source": "SYSTEM",
+                        "label": "Job Location",
+                        "slug": "job_location",
+                        "type": "TEXT",
+                        "required": true
+                    },
+                    {
+                        "source": "SYSTEM",
+                        "label": "Bill Rate",
+                        "slug": "bill_rate",
+                        "type": "AMOUNT",
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "label": "Duration & Description",
+                "slug": "duration_and_description",
+                "fields": [
+                    {
+                        "source": "SYSTEM",
+                        "label": "Estimated Job Start Date",
+                        "slug": "job_start_date",
+                        "type": "DATE",
+                        "required": true
+                    },
+                    {
+                        "source": "SYSTEM",
+                        "label": "Target Closing Date for Job",
+                        "slug": "job_end_date",
+                        "type": "DATE",
+                        "required": true
+                    },
+                    {
+                        "source": "SYSTEM",
+                        "label": "Job Description",
+                        "slug": "job_description",
+                        "type": "TEXTAREA",
+                        "readonly": true,
+                        "required": true,
+                        "layout": "FULL"
+                    }
+                ]
+            },
+            {
+                "label": "Additional Information",
+                "slug": "additional_information",
+                "fields": [
+                    {
+                        "source": "CUSTOM",
+                        "label": "Notes",
+                        "slug": "notes",
+                        "type": "TEXTAREA",
+                        "readonly": true,
+                        "required": true,
+                        "layout": "FULL"
+                    }
+                ]
+            }
+        ],
+        "workflows": {
+            "onBeforeFormLoad": [],
+            "onFormFieldValueChange": []
+        },
+        "permissions": [
+            {
+                "slug": "job_create",
+                "label": "Create new Job",
+                "roles": [
+                    "*"
+                ],
+                "users": []
+            },
+            {
+                "slug": "job_update",
+                "label": "Update any job",
+                "roles": [
+                    "*"
+                ],
+                "users": []
+            },
+            {
+                "slug": "job_own_update",
+                "label": "Update own job",
+                "roles": [
+                    "*"
+                ],
+                "users": [],
+                "parents": [
+                    "job_update"
+                ]
+            },
+            {
+                "slug": "job_view",
+                "label": "View Job",
+                "roles": [
+                    "*"
+                ],
+                "users": []
+            },
+            {
+                "slug": "job_delete",
+                "label": "Delete any Job",
+                "roles": [
+                    "*"
+                ],
+                "users": []
+            },
+            {
+                "slug": "job_own_delete",
+                "label": "Delete own Job",
+                "roles": [
+                    "*"
+                ],
+                "users": [],
+                "parents": [
+                    "job_delete"
+                ]
+            }
+        ]
+    }
+}

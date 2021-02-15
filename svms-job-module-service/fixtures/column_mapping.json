@@ -1,0 +1,1 @@
+[{"model": "job.columnmapping", "pk": 1, "fields": {"uid": "3102ac58-b5a3-4103-906d-1af20991542d", "config_id": 1, "mapping": {"column_1": "JD"}, "created_on": "2020-10-19T09:23:15.963Z", "modified_on": "2020-10-19T09:23:15.963Z"}}]

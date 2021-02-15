@@ -1,0 +1,1384 @@
+{
+  "version": "1.0",
+  "program_id": "newconfig",
+  "config_json": {
+    "slug": "jobs",
+    "type": "SYSTEM",
+    "group": "Order Management",
+    "config": {
+      "views": {
+        "LIST": [
+          {
+            "name": "Default List",
+            "columns": [
+              {
+                "ref_slug": "job_title"
+              },
+              {
+                "ref_slug": "job_level"
+              },
+              {
+                "ref_slug": "location"
+              },
+              {
+                "ref_slug": "created_by"
+              },
+              {
+                "ref_slug": "created_on"
+              }
+            ]
+          }
+        ]
+      },
+      "workflows": {
+        "onBeforeFormLoad": [
+          
+        ],
+        "onFormFieldValueChange": [
+          
+        ]
+      },
+      "initiate_approver_workflow": [
+        
+      ],
+      "permissions": [
+        {
+          "slug": "job_create",
+          "label": "Create new Job",
+          "roles": [
+            "*"
+          ],
+          "users": [
+            
+          ]
+        },
+        {
+          "slug": "job_update",
+          "label": "Update any job",
+          "roles": [
+            "*"
+          ],
+          "users": [
+            
+          ]
+        },
+        {
+          "slug": "job_own_update",
+          "label": "Update own job",
+          "roles": [
+            "*"
+          ],
+          "users": [
+            
+          ],
+          "parents": [
+            "job_update"
+          ]
+        },
+        {
+          "slug": "job_view",
+          "label": "View Job",
+          "roles": [
+            "*"
+          ],
+          "users": [
+            
+          ]
+        },
+        {
+          "slug": "job_delete",
+          "label": "Delete any Job",
+          "roles": [
+            "*"
+          ],
+          "users": [
+            
+          ]
+        },
+        {
+          "slug": "job_own_delete",
+          "label": "Delete own Job",
+          "roles": [
+            "*"
+          ],
+          "users": [
+            
+          ],
+          "parents": [
+            "job_delete"
+          ]
+        }
+      ],
+      "field_groups": [
+        {
+          "label": "Info of Custom Fields",
+          "fields": [
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "slug": "custom_field_010",
+              "name": "Custom Field 010",
+              "label": "Custom Field 001",
+              "placeholder": "Your Custom Field Value example",
+              "help_text": "Lorem ipsum textual description for custom field",
+              "source": "CUSTOM",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": "column_1"
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38908",
+              "type": "TEXT",
+              "slug": "custom_field_020",
+              "name": "Custom Field 020",
+              "label": "Custom Field 002",
+              "placeholder": "",
+              "help_text": "Lorem ipsum textual description for custom field",
+              "source": "CUSTOM",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": "column_2"
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38909",
+              "type": "TEXT",
+              "slug": "custom_field_030",
+              "name": "Custom Field 030",
+              "label": "Custom Field 003",
+              "placeholder": "",
+              "help_text": "Lorem ipsum textual description for custom field",
+              "source": "CUSTOM",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": "column_3"
+            }
+          ]
+        },
+        {
+          "label": "Required Fields",
+          "fields": [
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "UUID",
+              "user_type": "UUID",
+              "slug": "uuid",
+              "name": "uuid",
+              "label": "uuid",
+              "placeholder": "uuid",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": true,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "job_manager",
+              "name": "Job Manager",
+              "label": "Job Manager",
+              "placeholder": "Job Manager Data",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "msp_manager",
+              "name": "MSP Manager",
+              "label": "MSP Manager",
+              "placeholder": "MSP Manager Data",
+              "help_text": "Lorem ipsum textual description for custom field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "program_id",
+              "name": "Program Id",
+              "label": "Program Id",
+              "placeholder": "Program Id Data",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "derived",
+              "user_type": "derived",
+              "slug": "category",
+              "name": "Category",
+              "label": "Category",
+              "placeholder": "category Data",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": true,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "derived",
+              "user_type": "derived",
+              "slug": "title",
+              "name": "Title",
+              "label": "Title",
+              "placeholder": "Job Title Data",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": true,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "type",
+              "name": "Type",
+              "label": "Type",
+              "placeholder": "Job Type Data",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "hire_type",
+              "name": "Hire Type",
+              "label": "Hire Type",
+              "placeholder": "Hire Type Data",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "company_name",
+              "name": "Company Name",
+              "label": "Company Name",
+              "placeholder": "Company Name",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "level",
+              "name": "Level",
+              "label": "Level",
+              "placeholder": "Level",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Integer",
+              "user_type": "Integer",
+              "slug": "no_of_openings",
+              "name": "No of Openings",
+              "label": "No of Openings",
+              "placeholder": "No of Openings",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "location_id",
+              "name": "Location Id",
+              "label": "Location Id",
+              "placeholder": "Location Id",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Integer",
+              "user_type": "Integer",
+              "slug": "salary_min_range",
+              "name": "salary min range",
+              "label": "salary min range",
+              "placeholder": "salary min range",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Integer",
+              "user_type": "Integer",
+              "slug": "salary_max_range",
+              "name": "salary max range",
+              "label": "salary max range",
+              "placeholder": "salary max range",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "description",
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Description",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "DATETIME",
+              "user_type": "DATETIME",
+              "slug": "start_date",
+              "name": "start date",
+              "label": "start date",
+              "placeholder": "start date",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "DATETIME",
+              "user_type": "DATETIME",
+              "slug": "end_date",
+              "name": "end date",
+              "label": "end date",
+              "placeholder": "end date",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "derived",
+              "user_type": "derived",
+              "slug": "tags",
+              "name": "tags",
+              "label": "tags",
+              "placeholder": "tags",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "hierarchy",
+              "name": "hierarchy",
+              "label": "hierarchy",
+              "placeholder": "hierarchy",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "hierarchy_location",
+              "name": "hierarchy location",
+              "label": "hierarchy location",
+              "placeholder": "hierarchy location",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "currency",
+              "name": "currency",
+              "label": "currency",
+              "placeholder": "currency",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "FLOAT",
+              "user_type": "FLOAT",
+              "slug": "min_bill_rate",
+              "name": "min bill rate",
+              "label": "min bill rate",
+              "placeholder": "min bill rate",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "FLOAT",
+              "user_type": "FLOAT",
+              "slug": "max_bill_rate",
+              "name": "max bill rate",
+              "label": "max bill rate",
+              "placeholder": "max bill rate",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "shift",
+              "name": "shift",
+              "label": "shift",
+              "placeholder": "shift",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "JSON",
+              "user_type": "JSON",
+              "slug": "qualifications",
+              "name": "qualifications",
+              "label": "qualifications",
+              "placeholder": "qualifications",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "distribution",
+              "name": "distribution",
+              "label": "distribution",
+              "placeholder": "schedule interview",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "shift_calender",
+              "name": "shift calender",
+              "label": "shift calender",
+              "placeholder": "shift calender",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "pre_identified_candidate",
+              "name": "pre identified candidate",
+              "label": "pre identified candidate",
+              "placeholder": "pre identified candidate",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "pre_identified_vendor",
+              "name": "pre identified vendor",
+              "label": "pre identified vendor",
+              "placeholder": "pre identified vendor",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "pre_identified_vendor",
+              "name": "pre identified vendor",
+              "label": "pre identified vendor",
+              "placeholder": "pre identified vendor",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "schedule_interview",
+              "name": "schedule interview",
+              "label": "schedule interview",
+              "placeholder": "schedule interview",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "derived",
+              "user_type": "derived",
+              "slug": "foundational",
+              "name": "Foundational",
+              "label": "Foundational",
+              "placeholder": "foundational data",
+              "help_text": "Lorem ipsum foundational field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "DateTime",
+              "user_type": "DateTime",
+              "slug": "response_by_date",
+              "name": "Response By Date",
+              "label": "Response By Date",
+              "placeholder": "Response By Date",
+              "help_text": "Lorem ipsum response by date field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "approve",
+              "name": "Approve",
+              "label": "Approve",
+              "placeholder": "Approve",
+              "help_text": "Lorem ipsum Approve field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "status",
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Status",
+              "help_text": "Lorem ipsum status field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "DateTime",
+              "user_type": "DateTime",
+              "slug": "created_on",
+              "name": "Created On",
+              "label": "Created On",
+              "placeholder": "Created on Data",
+              "help_text": "Lorem ipsum created on field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "DateTime",
+              "user_type": "DateTime",
+              "slug": "modified_on",
+              "name": "Modified On",
+              "label": "Modified On",
+              "placeholder": "Modified on",
+              "help_text": "Lorem ipsum modified on field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "created_by",
+              "name": "Created By",
+              "label": "Created By",
+              "placeholder": "Created By",
+              "help_text": "Lorem ipsum created field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "modified_by",
+              "name": "Modified By",
+              "label": "Modified By",
+              "placeholder": "Modified Data",
+              "help_text": "Lorem ipsum modified field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "derived",
+              "user_type": "derived",
+              "slug": "template_name",
+              "name": "Template",
+              "label": "Template",
+              "placeholder": "Template Data",
+              "help_text": "Lorem ipsum field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "is_template",
+              "name": "Is Template",
+              "label": "Is Template",
+              "placeholder": "Job Template Flag",
+              "help_text": "Lorem ipsum textual field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "submit_type",
+              "name": "submit type",
+              "label": "submit type",
+              "placeholder": "submit type",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "is_delete",
+              "name": "is delete",
+              "label": "is delete",
+              "placeholder": "is delete",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "is_enabled",
+              "name": "is enabled",
+              "label": "is enabled",
+              "placeholder": "is enabled",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Float",
+              "user_type": "Float",
+              "slug": "rate",
+              "name": "rate",
+              "label": "rate",
+              "placeholder": "rate",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "rate_type",
+              "name": "rate type",
+              "label": "rate type",
+              "placeholder": "rate type",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Float",
+              "user_type": "Float",
+              "slug": "hours_per_day",
+              "name": "hours per day",
+              "label": "hours per day",
+              "placeholder": "hours per day",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Float",
+              "user_type": "Float",
+              "slug": "total_hours",
+              "name": "total hours",
+              "label": "total hours",
+              "placeholder": "total hours",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Int",
+              "user_type": "Int",
+              "slug": "total_days",
+              "name": "total days",
+              "label": "total days",
+              "placeholder": "total days",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Float",
+              "user_type": "Float",
+              "slug": "additional_amount",
+              "name": "additional amount",
+              "label": "additional amount",
+              "placeholder": "additional amount",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "adjustment_type",
+              "name": "adjustment type",
+              "label": "adjustment type",
+              "placeholder": "adjustment type",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "allow_expense",
+              "name": "allow expense",
+              "label": "allow expense",
+              "placeholder": "allow expense",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Float",
+              "user_type": "Float",
+              "slug": "assignment_length",
+              "name": "assignment length",
+              "label": "assignment length",
+              "placeholder": "assignment length",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Float",
+              "user_type": "Float",
+              "slug": "min_budget",
+              "name": "min budget",
+              "label": "min budget",
+              "placeholder": "min budget",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Float",
+              "user_type": "Float",
+              "slug": "max_budget",
+              "name": "max budget",
+              "label": "max budget",
+              "placeholder": "max budget",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "adjustment_value",
+              "name": "adjustment value",
+              "label": "adjustment value",
+              "placeholder": "adjustment value",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "trigger_approval_workflow",
+              "name": "trigger approval workflow",
+              "label": "trigger approval workflow",
+              "placeholder": "trigger approval workflow",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "unit_of_measure",
+              "name": "unit of measure",
+              "label": "unit of measure",
+              "placeholder": "unit of measure",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "note_for_approver",
+              "name": "note for approver",
+              "label": "note for approver",
+              "placeholder": "note for approver",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "vendor_rate_exceed",
+              "name": "vendor rate exceed",
+              "label": "vendor rate exceed",
+              "placeholder": "vendor rate exceed",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "JSON",
+              "user_type": "JSON",
+              "slug": "checklist",
+              "name": "checklist",
+              "label": "checklist",
+              "placeholder": "checklist",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "JSON",
+              "user_type": "JSON",
+              "slug": "approverlist",
+              "name": "approverlist",
+              "label": "approverlist",
+              "placeholder": "approverlist",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "check_max_bill_rate",
+              "name": "check max bill rate",
+              "label": "check max bill rate",
+              "placeholder": "check max bill rate",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Int",
+              "user_type": "Int",
+              "slug": "job_board_id",
+              "name": "job board id",
+              "label": "job board id",
+              "placeholder": "job board id",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "job_board_reference_number",
+              "name": "job board reference number",
+              "label": "job board reference number",
+              "placeholder": "job board reference number",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "rate_model",
+              "name": "rate model",
+              "label": "rate model",
+              "placeholder": "rate model",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "ot_exempt",
+              "name": "ot exempt",
+              "label": "ot exempt",
+              "placeholder": "ot exempt",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "allow_user_description",
+              "name": "allow user description",
+              "label": "allow user description",
+              "placeholder": "allow user description",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "user_type": "TEXT",
+              "slug": "positions",
+              "name": "positions",
+              "label": "positions",
+              "placeholder": "positions",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "direct_sourcing_distribution",
+              "name": "direct sourcing distribution",
+              "label": "direct sourcing distribution",
+              "placeholder": "direct sourcing distribution",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "Boolean",
+              "user_type": "Boolean",
+              "slug": "is_enabled",
+              "name": "is enabled",
+              "label": "is enabled",
+              "placeholder": "is enabled",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "JSON",
+              "user_type": "JSON",
+              "slug": "submissions_from_direct_sourcing",
+              "name": "submissions from direct sourcing",
+              "label": "submissions from direct sourcing",
+              "placeholder": "submissions from direct sourcing",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "JSON",
+              "user_type": "JSON",
+              "slug": "candidates",
+              "name": "candidates",
+              "label": "candidates",
+              "placeholder": "candidates",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            },
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "JSON",
+              "user_type": "JSON",
+              "slug": "foundational_data",
+              "name": "foundational data",
+              "label": "foundational data",
+              "placeholder": "foundational data",
+              "help_text": "Lorem ipsum textual description",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": false,
+              "ref_column": ""
+            }
+          ]
+        }
+      ],
+      "approvals": [
+        {
+          "label": "Send approval",
+          "fields": [
+            {
+              "id": "0433b15b-dd12-495a-a962-8f5f32a38907",
+              "type": "TEXT",
+              "slug": "rate",
+              "name": "rate",
+              "label": "rate",
+              "placeholder": "rate Value example",
+              "help_text": "Lorem ipsum textual description for custom field",
+              "source": "",
+              "meta_data": {
+                
+              },
+              "is_required": true,
+              "ref_column": ""
+            }
+          ]
+        }
+      ]
+    },
+    "enabled": true,
+    "version": 1,
+    "description": "Jobs module configurations",
+    "display_name": {
+      "plural": "Jobs",
+      "singular": "Job"
+    }
+  }
+}
